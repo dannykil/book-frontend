@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
+// let url = 'http://localhost:8080';
+let url = 'http://13.124.143.225:8080';
+
 const UpdateForm = (props) => {
   let navigate = useNavigate();
 
@@ -15,7 +18,8 @@ const UpdateForm = (props) => {
   // 상세보기에서 이미 백엔드에서 데이터를 받아왔는데 왜 또 받는 것인가?
   // 넘겨줄 수 있으나 파라미터로 하나하나 모두 넘겨야해서 다시 받는걸로 진행
   useEffect(() => {
-    fetch('http://localhost:8080/book/' + id)
+    // fetch('http://localhost:8080/book/' + id)
+    fetch(url + '/book/' + id)
       .then((res) => res.json())
       .then((res) => {
         setBook(res);
@@ -28,7 +32,8 @@ const UpdateForm = (props) => {
 
   const submitBook = (e) => {
     e.preventDefault(); // submit이 액션을 안타고 자기 할일을 그만함
-    fetch('http://localhost:8080/book/' + id, {
+    // fetch('http://localhost:8080/book/' + id, {
+    fetch(url + '/book/' + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',

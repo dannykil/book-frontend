@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+// let url = 'http://localhost:8080';
+let url = 'http://13.124.143.225:8080';
+
 const SaveForm = (props) => {
   let navigate = useNavigate();
 
@@ -16,7 +19,8 @@ const SaveForm = (props) => {
 
   const submitBook = (e) => {
     e.preventDefault(); // submit이 액션을 안타고 자기 할일을 그만함
-    fetch('http://localhost:8080/book', {
+    // fetch('http://localhost:8080/book', {
+    fetch(url + '/book', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',

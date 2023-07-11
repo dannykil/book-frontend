@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import BookItem from '../../components/BookItem';
 
+// let url = 'http://localhost:8080';
+let url = 'http://13.124.143.225:8080';
+
 const Home = () => {
   const [books, setBooks] = useState([]);
 
@@ -9,7 +12,7 @@ const Home = () => {
     // 비동기 함수
     // 왜 then이 2개인가?
     // 첫번째 인자에는 빈배열을 반환(오래걸릴 수 있으니-promise라고 한다), 그릐고 두번째에 데이터를 전달한다.
-    fetch('http://localhost:8080/book', { method: 'GET' })
+    fetch(url + '/book', { method: 'GET' })
       .then((res) => res.json()) // 응답이 온 데이터를 json object로 변환하겠다
       .then((res) => {
         console.log(1, res);

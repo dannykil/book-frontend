@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
+// let url = 'http://localhost:8080';
+let url = 'http://13.124.143.225:8080';
+
 const Detail = (props) => {
   console.log('detail', props);
   let navigate = useNavigate();
@@ -16,7 +19,8 @@ const Detail = (props) => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8080/book/' + id)
+    //fetch('http://localhost:8080/book/' + id)
+    fetch(url + '/book/' + id)
       .then((res) => res.json())
       .then((res) => {
         setBook(res);
@@ -28,7 +32,8 @@ const Detail = (props) => {
   };
 
   const deleteBook = () => {
-    fetch('http://localhost:8080/book/' + id, { method: 'DELETE' })
+    //fetch('http://localhost:8080/book/' + id, { method: 'DELETE' })
+    fetch(url + '/book/' + id, { method: 'DELETE' })
       .then((res) => res.text())
       .then((res) => {
         if (res === 'ok') {
