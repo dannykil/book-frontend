@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>책 리스트 보기-hook</h1>
+      <h1>책 리스트 보기-webhook</h1>
       {books.map((book) => (
         <BookItem key={book.id} book={book} />
       ))}
