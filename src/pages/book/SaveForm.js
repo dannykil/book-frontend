@@ -52,7 +52,7 @@ const SaveForm = (props) => {
 
   return (
     <Form onSubmit={submitBook}>
-      <h1>등록하기</h1>
+      <h1 className="mt-5">등록하기</h1>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Title</Form.Label>
         <Form.Control
