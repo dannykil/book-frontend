@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-// let url = 'http://localhost:8080';
-let url = 'http://13.124.143.225:8080';
+let url = 'http://localhost:8080'; // local
+// let url = 'http://13.124.143.225:8080'; // dev
 
 const SaveForm = (props) => {
   let navigate = useNavigate();

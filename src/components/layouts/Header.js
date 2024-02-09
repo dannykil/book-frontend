@@ -12,14 +12,49 @@ const Header = () => {
 
   return (
     <>
-      <Navbar bg="primary" className="fixed-top" data-bs-theme="dark">
+      <Navbar expand="lg" bg="primary" data-bs-theme="dark" fixed="top">
+        <Container fluid>
+          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: '100px' }}
+              navbarScroll
+            >
+              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="#action2">Link</Nav.Link>
+              <NavDropdown title="Link" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">
+                  Something else here
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="#" disabled>
+                Link
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      {/* <Navbar bg="primary" className="fixed-top" data-bs-theme="dark">
         <Container>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
           <Navbar.Brand onClick={handleShow}>
             <Link className="nav-link">Book</Link>
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+          </Nav>
+          <Nav className="me-auto">
+            <Nav.Link href="/category">Category</Nav.Link>
+          </Nav>
+          <Nav className="me-auto">
+            <Nav.Link href="/category">Category</Nav.Link>
           </Nav>
         </Container>
 
@@ -40,12 +75,18 @@ const Header = () => {
           </Offcanvas.Body>
         </Offcanvas>
         <Link
-          to="/loginForm"
-          style={{ position: 'absolute', right: 0, marginRight: '30px' }}
+          to="/LoginForm"
+          style={{ position: 'absolute', right: 50, marginRight: '30px' }}
         >
           Login
         </Link>
-      </Navbar>
+        <Link
+          to="/JoinForm"
+          style={{ position: 'absolute', right: 0, marginRight: '30px' }}
+        >
+          Join
+        </Link>
+      </Navbar> */}
     </>
     // <Navbar bg="primary" variant="dark">
     //   <Container>

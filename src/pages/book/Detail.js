@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
-// let url = 'http://localhost:8080';
-let url = 'http://13.124.143.225:8080';
+let url = 'http://localhost:8080';
+// let url = 'http://13.124.143.225:8080';
 
 const Detail = (props) => {
   console.log('detail', props);

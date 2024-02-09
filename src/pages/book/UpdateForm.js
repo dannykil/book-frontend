@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
-// let url = 'http://localhost:8080';
-let url = 'http://13.124.143.225:8080';
+let url = 'http://localhost:8080';
+// let url = 'http://13.124.143.225:8080';
 
 const UpdateForm = (props) => {
   let navigate = useNavigate();
@@ -35,6 +35,7 @@ const UpdateForm = (props) => {
     // fetch('http://localhost:8080/book/' + id, {
     fetch(url + '/book/' + id, {
       method: 'PUT',
+      // method: 'Post',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
