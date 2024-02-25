@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-  Button,
   Container,
-  Form,
   Nav,
   Navbar,
   NavDropdown,
@@ -32,15 +30,21 @@ const Header3 = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 {/* <Nav className="justify-content-end flex-grow-1 pe-3"> */}
-                <Nav className="me-auto">
-                  <Nav.Link href="/moneybook">MoneyBook</Nav.Link>
-                  <Nav.Link href="/booklist">BookList</Nav.Link>
-                  <Nav.Link href="/table">DataTable</Nav.Link>
+                <Nav variant="underline">
+                  {/* <Nav.Item>
+                    <Nav.Link href="/moneybook">MoneyBook</Nav.Link>
+                  </Nav.Item> */}
+                  <Nav.Link href="/expense">Expense</Nav.Link>
+                  <Nav.Link href="/booklist">Notice</Nav.Link>
+                  {/* <Nav.Link href="/table">DataTable</Nav.Link>
+                  <Nav.Link href="/table2">EnhancedTable</Nav.Link>
+                  <Nav.Link href="/table3">DataGridPro</Nav.Link>
+                  <Nav.Link href="/chart">SimpleBarChart</Nav.Link> */}
                   <NavDropdown
                     title="Settings"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/category">
+                    <NavDropdown.Item href="/settings/category">
                       Category
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/role">Role</NavDropdown.Item>

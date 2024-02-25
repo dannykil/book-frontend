@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -35,20 +35,30 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
-export default function DataTable() {
+export default function Expense() {
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
       {/* <h1>책 리스트 보기</h1> */}
       <Card className="mb-2">
-        <Card.Header as="h5">Featured</Card.Header>
-        <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          {/* <Card.Text>
+        <Card.Header as="h3">
+          <Container>
+            <Row>
+              <Col>Expense Management</Col>
+              {/* <Col md="auto">Variable width content</Col> */}
+              <Col xs lg="1">
+                <Button variant="primary">Enroll</Button>
+              </Col>
+            </Row>
+          </Container>
+        </Card.Header>
+        {/* <Card.Body>
+          <Card.Title>Enroll your daily expense detail</Card.Title>
+          <Card.Text>
             With supporting text below as a natural lead-in to additional
             content.
-          </Card.Text> */}
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
+          </Card.Text>
+          <Button variant="primary">Enroll</Button>
+        </Card.Body> */}
       </Card>
       <DataGrid
         rows={rows}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Button, Form, InputGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 let url = 'http://localhost:8080'; // local
 // let url = 'http://13.124.143.225:8080'; // dev

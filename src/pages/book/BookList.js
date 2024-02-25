@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Card } from 'react-bootstrap';
 import BookItem from '../../components/moneybook/BookItem';
 
 let url = 'http://localhost:8080';
@@ -35,7 +36,17 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="mt-5">책 리스트 보기</h1>
+      <Card className="mb-2">
+        <Card.Header as="h5">Featured</Card.Header>
+        <Card.Body>
+          <Card.Title>Special title treatment</Card.Title>
+          {/* <Card.Text>
+            With supporting text below as a natural lead-in to additional
+            content.
+          </Card.Text> */}
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
       {books.map((book) => (
         <BookItem key={book.id} book={book} />
       ))}
