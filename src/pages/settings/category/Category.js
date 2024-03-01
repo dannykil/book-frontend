@@ -3,8 +3,8 @@ import CategoryItems from '../../../components/category/CategoryItem';
 import Title from '../../../components/layouts/Title';
 import BookItem from '../../../components/moneybook/BookItem';
 
-// let url = 'http://localhost:8080';
-let url = 'http://13.124.143.225:8080';
+let url = 'http://localhost:8080';
+// let url = 'http://13.124.143.225:8080';
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
