@@ -13,7 +13,13 @@ const Header3 = () => {
       {/* {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => ( */}
       {[false].map((expand) => (
         // <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
-        <Navbar expand="lg" bg="primary" data-bs-theme="dark" fixed="top">
+        <Navbar
+          key="lg"
+          expand="lg"
+          bg="primary"
+          data-bs-theme="dark"
+          fixed="top"
+        >
           <Container>
             <Navbar.Brand href="/">Money Book</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

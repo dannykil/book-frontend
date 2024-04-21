@@ -1,26 +1,20 @@
 import { combineReducers } from 'redux';
 import { all } from 'redux-saga/effects';
 import loading from './loading';
-import categories, { categorySaga } from './category';
+import categoryList, { categoryListSaga } from './categoryList';
+import categoryWrite, { categoryWriteSaga } from './categoryWrite';
+import categoryRead, { categoryReadSaga } from './categoryRead';
 
 const rootReducer = combineReducers({
-  categories,
+  categoryList,
+  categoryWrite,
+  categoryRead,
   loading,
 });
 
-// const rootReducer = combineReducers({
-//   auth,
-//   loading,
-//   user,
-//   write,
-//   post,
-//   posts,
-// });
-
 // 리듀서에 사가를 등록한다는 것은 무슨 의미?
 export function* rootSaga() {
-  // yield all([authSaga(), userSaga(), writeSaga(), postSaga(), postsSaga()]);
-  yield all([categorySaga()]);
+  yield all([categoryListSaga(), categoryWriteSaga(), categoryReadSaga()]);
 }
 
 export default rootReducer;

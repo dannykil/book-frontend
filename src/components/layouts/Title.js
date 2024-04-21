@@ -9,11 +9,8 @@ const Title = ({ title, mode }) => {
   return (
     <div>
       <Card className="mb-2">
-        <Card.Header as="h3">
-          {title} {mode}
-        </Card.Header>
+        <Card.Header as="h3">Category List</Card.Header>
         <Card.Body>
-          {/* <Card.Title>Special title treatment</Card.Title> */}
           <Card.Text>
             With supporting text below as a natural lead-in to additional
             content.
@@ -25,8 +22,6 @@ const Title = ({ title, mode }) => {
           >
             Enroll
           </Link>{' '}
-          <Button variant="primary">Add Detail</Button>{' '}
-          <Button variant="primary">Del Detail</Button>{' '}
         </Card.Body>
       </Card>
     </div>

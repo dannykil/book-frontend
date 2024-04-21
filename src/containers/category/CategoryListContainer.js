@@ -1,45 +1,46 @@
 import React, { useEffect } from 'react';
 import qs from 'qs';
 import { useDispatch, useSelector } from 'react-redux';
-// import { listPosts } from 'modules/posts';
 import { useLocation } from 'react-router-dom';
 import CategoryList from '../../components/category/CategoryList';
-import { listCategory } from '../../modules/category';
-// import { listCategory } from '../../libs/api/category';
+import { categoryListAction } from '../../modules/categoryList';
+import CategoryHeader from '../../components/category/CategoryHeader';
 
 const CategoryListContainer = () => {
   // const { username } = useParams();
   const location = useLocation();
   const dispatch = useDispatch();
-  const { categories, loading } = useSelector(({ categories, loading }) => ({
-    categories: categories.categories,
-    loading: loading['category/LIST_CATEGORY'],
-  }));
-  // const { posts, error, loading, user } = useSelector(
-  // ({ posts, loading, user }) => ({
-  //   posts: posts.posts,
-  //   error: posts.error,
-  //   loading: loading['posts/LIST_POSTS'],
-  //   user: user.user,
-  // }),
-  // );
+  const { categoryList, loading, error } = useSelector(
+    ({ categoryList, loading, error }) => ({
+      categoryList: categoryList.categories,
+      loading: loading['category/LIST_CATEGORY'],
+      error: categoryList.error,
+    }),
+  );
 
   useEffect(() => {
     const { page } = qs.parse(location.search, {
       ignoreQueryPrefix: true,
     });
     // dispatch(listCategory({ tag, username, page }));
-    dispatch(listCategory(page));
+    dispatch(categoryListAction(page));
   }, [dispatch, location.search]);
 
   return (
-    // <CategoryList
-    //   loading={loading}
-    //   error={error}
-    //   posts={posts}
-    //   showWriteButton={user}
-    // />
-    <CategoryList categories={categories} loading={loading} />
+    <>
+      <CategoryHeader
+        categories={categoryList}
+        loading={loading}
+        // onCancle={onCancle}
+        // onPublish={onPublish}
+        error={error}
+        isList={true}
+        isWrite={false}
+        isRead={false}
+        isEdit={false}
+      />
+      <CategoryList categories={categoryList} loading={loading} />
+    </>
   );
 };
 
