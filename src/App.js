@@ -16,11 +16,24 @@ import SimpleBarChart from './pages/book/Chart';
 import BasicExampleDataGridPro from './pages/book/Table3';
 import Expense from './pages/book/Expense';
 // import Category from './pages/settings/category/Category';
-import CategoryEnroll from './pages/settings/category/CategoryEnroll';
-import CategoryRead from './pages/settings/category/CategoryRead';
-import CategoryList from './pages/settings/category/CategoryList';
+import CategoryWritePage from './pages/settings/category/CategoryWritePage';
+import CategoryListPage from './pages/settings/category/CategoryListPage';
+import CategoryReadPage from './pages/settings/category/CategoryReadPage';
+import CategoryEditPage from './pages/settings/category/CategoryEditPage';
+// import debug from 'debug';
+// const authLogger = debug('auth');
+var debug = require('debug')('http'),
+  // http = require('http'),
+  name = 'My App';
+
+debug('booting %o', name);
+// fake app
+
+// debug('booting %o', name);
 
 function App() {
+  // authLogger('Application Start');
+
   return (
     <Container className="mt-5" fluid="xxl">
       {/* 로그인이 되면 Header/Footer가 보이도록 세팅 */}
@@ -51,17 +64,22 @@ function App() {
         <Route
           path="/settings/category"
           exact={true}
-          element={<CategoryList />}
+          element={<CategoryListPage />}
         />
         <Route
-          path="/settings/category/enroll"
+          path="/settings/category/write"
           exact={true}
-          element={<CategoryEnroll />}
+          element={<CategoryWritePage />}
         />
         <Route
-          path="/settings/category/:id"
+          path="/settings/category/:categoryId"
           exact={true}
-          element={<CategoryRead />}
+          element={<CategoryReadPage />}
+        />
+        <Route
+          path="/settings/category/edit"
+          exact={true}
+          element={<CategoryEditPage />}
         />
         <Route path="/booklist" exact={true} element={<BookList />} />
         <Route path="/saveForm" exact={true} element={<SaveForm />} />
